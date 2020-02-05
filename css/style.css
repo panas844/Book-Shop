@@ -1,0 +1,151 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }  
+  body{
+
+    color:#001514;
+    margin: 0; /* This should be added to all the projects */
+    padding:0; /* This should be added to all the projects */
+    font-family: "montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    }
+
+    img {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .content-wrap {
+        max-width: 1000px;
+        width:85%;
+        margin: 0 auto;
+        padding:40px 0;
+    }
+
+header {
+    padding: 20px; /* some padding */
+    text-align: center; /* center the text */
+    background: #3b6d63; /* green background */
+    color: white; /* white text color */
+  }
+
+header .content-wrap {
+    padding-bottom: 0px
+    ;
+}
+
+
+/* The Nagivation Menu */
+.navbar {
+
+    background: peru;
+    overflow: hidden;
+}
+
+.menu-item {
+/* float: left; */
+    text-align: center; /* Center the text */
+    padding: 14px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline */
+}
+.subnav {
+    float: left;
+    overflow: hidden;
+  }
+
+  /* W3 Solution with BUTTONS */
+
+  /* Subnav button */
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: wheat;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+/* Add a red background color to navigation links on hover */
+.navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: grey;
+  }
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: grey;
+    width: 100%;
+    z-index: 1;
+  }
+
+/* Style the subnav links */
+.subnav-content a {
+    float: left;
+    color: black;
+    text-decoration: none;
+    padding-right: 20px;
+  }
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+
+
+
+main {
+text-align: center;
+}
+
+
+
+
+/* Contact Info */
+footer {
+
+    background-color: #3b6d63;
+    color: whitesmoke;
+    text-align: center;
+    
+
+}
+
+
+.contact-list {
+list-style-type: none;
+padding: 0;
+/* flex-direction: column; */
+}
+
+.contact-list a {
+    padding: 40px;
+    display: inline-block;
+}
+
+@media screen and (min-width:750px){
+    header, footer {
+        text-align: center;
+    
+    }
+    .contact-list {
+        display: flex;
+        justify-content: center;
+
+    }
+}
+
+
+
+
