@@ -14,6 +14,7 @@ html {
     line-height: 1.5;
     }
 
+   
     img {
         width: 300px;
         padding: 20px;
@@ -147,5 +148,12 @@ padding: 0;
 }
 
 
+#page-container {
+  width: 100px;
+  margin: 0 auto;
+}
 
+h2 {
+  font-size: 10px;
+}
 
