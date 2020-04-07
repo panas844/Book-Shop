@@ -7,7 +7,8 @@ function validateSearchForm() {
     //   return false;
     // }
     if (x==null || x=="" || x.length < 3) {
-        alert("Field is not 3 characters minimum!");
+        
+        document.getElementById("search1").className+=" is-invalid"
         return false;
     }
   }
@@ -17,31 +18,47 @@ function validateSearchForm() {
   function validateLoginForm() {
     var x = document.forms["loginForm"]["email"].value;
     var y = document.forms["loginForm"]["password"].value;
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     // if (x == "") {
     //   alert("Name must be filled out");
     //   return false;
     // }
-    if (x==null || x=="" || x.length < 3) {
-        alert("Email and Password must be filled");
+    if (x==null || x=="") {
+        if(y==null || y==""){
+            document.forms["loginForm"]["email"].className+=" is-invalid"
+            document.forms["loginForm"]["password"].className+=" is-invalid"
+            return false
+        } else {
+                    // alert("Email must be filled");
+        document.forms["loginForm"]["email"].className+=" is-invalid"
+        return false;
+        }
+    } else if (!x.match(mailformat)) {
+        document.forms["loginForm"]["email"].className+=" is-invalid"
+        document.getElementById("passwordFeedback").innerHTML="Please type a valid email"
+        return false
+    } else if (y==null || y=="") {
+        // alert("Password must be filled");
+        document.forms["loginForm"]["password"].className+=" is-invalid"
         return false;
     }
   }
 
-function ValidateEmail(inputText)
-{
-var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-if(inputText.value.match(mailformat))
-{
-    document.loginForm.email.focus();
-return true;
-}
-else
-{
-alert("You have entered an invalid email address!");
-document.loginForm.email.focus();
-return false;
-}
-}
+// function ValidateEmail(inputText)
+// {
+// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+// if(inputText.value.match(mailformat))
+// {
+//     document.loginForm.email.focus();
+// return true;
+// }
+// else
+// {
+// alert("You have entered an invalid email address!");
+// document.loginForm.email.focus();
+// return false;
+// }
+// }
 
 
 // Sign Up Form
