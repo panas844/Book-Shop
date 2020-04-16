@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,8 +17,8 @@
 <body>
   
 
-    <!-- Navbar Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand">
         <img src="images/two donats.jfif" width="40" height="40" alt="Bookstore-Logo">
       </a>
@@ -42,10 +43,11 @@
         </ul>
 
         <!-- Search Form -->
-        <form class="form-inline my-2 my-lg-0" name="searchForm" onsubmit="return validateSearchForm()">
-          <input class="form-control mr-sm-2" type="search" placeholder="Book Name or Author" aria-label="Search" name="fname" id="search1">
-          <p class="invalid-feedback">Please search something with 3 characters or more.</p>
+        <form class="form-inline my-2 my-lg-0 needs-validation" name="searchForm">
+          <input oninput=" validateSearchForm()" class="form-control mr-sm-2" type="search" placeholder="Book Name or Author" aria-label="Search" name="fname" id="search1">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         <p class="invalid-feedback alert-message-search">Please search something with 3 characters or more.</p>
+
         </form>
       </div>
     </nav>
@@ -67,22 +69,20 @@
 
         <!-- Login Form -->
         <h1 class="my-3">My Area</h1>
-        <form name="loginForm" onsubmit="return validateLoginForm()">
+        <form name="loginForm" class="needs-validation" novalidate>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div class="invalid-feedback" id="passwordFeedback">
-              Please type your email.
+            <input oninput="validateEmail()"  name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="invalid-feedback" id="emailFeedback">
+              Please type a valid email.
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-            <div class="invalid-feedback">
-              Please type your password.
-            </div>
+            <input  name="password" type="password" class="form-control" id="exampleInputPassword1">
+            <div class="invalid-feedback" id="passwordFeedback"> Please type your password. </div>
           </div>
-          <button type="submit" class="btn btn-primary" onclick="return ValidateEmail(document.loginForm.email) " >Login</button>
+          <button onclick= "return validateLoginForm()" type="submit" class="btn btn-primary" id="loginButton" >Login</button>
           <a href="libreria-signup-form.html" target="_blank" type="button" class="btn btn-danger" class="button">Sign Up</a>
         </form>
 
